@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-09-18T11:22:00 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerReport" pageWidth="500" pageHeight="600" columnWidth="460" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="553710ae-1f2f-4208-a9dd-de85af540129">
+<!--	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>-->
+<!--	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Red Alpha Data Adapter"/>-->
+<!--	<property name="com.jaspersoft.studio.unit." value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>-->
+<!--	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>-->
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM customer]]>
+	</queryString>
+	<field name="id" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="salary" class="java.math.BigDecimal"/>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="145" splitType="Stretch">
+			<staticText>
+				<reportElement x="135" y="10" width="190" height="30" uuid="9c8f75bc-5cc3-4432-a7b0-6898d69cc665"/>
+				<textElement>
+					<font fontName="Times New Roman" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Report]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="360" y="1" width="100" height="30" uuid="aa9c5361-f83c-45e1-965b-7d256ff4acb4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="360" y="33" width="100" height="30" uuid="c19dbe2d-9d18-4c02-aa28-d9389eb1c397"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="185" y="40" width="101" height="93" uuid="e922b239-d9f9-4de3-a835-c90581ca98ca"/>
+				<imageExpression><![CDATA["D:/My Graphics/circle-cropped (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="-7" y="1" width="90" height="30" uuid="0e3ce5c1-a779-44d1-a21b-f5ca6a7584c2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="1" width="111" height="30" uuid="16ebc70f-435e-43ca-b480-e1cfd86ebf2e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="1" width="120" height="30" uuid="093ad0e4-08eb-4fdc-80de-e94a3cd2913d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="1" width="112" height="30" uuid="70203ffb-1080-44c1-bade-944bab0958df"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Salary]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="-4" y="2" width="83" height="30" uuid="f6e39fe3-3af8-4a7d-8110-a835996d0cf6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="2" width="100" height="30" uuid="bf8f020b-e1eb-494f-940b-09a0350dbb69"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="2" width="100" height="30" uuid="907e4537-774f-4c1b-bfe9-ff06a8182a5d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="2" width="100" height="30" uuid="cc6e7967-e674-4f32-b6b2-faef71ab4bc5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
