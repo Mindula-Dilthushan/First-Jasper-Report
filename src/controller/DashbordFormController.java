@@ -23,7 +23,7 @@ public class DashbordFormController {
             InputStream is = this.getClass().getResourceAsStream("/report/CustomData.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(is);
             HashMap hashMap = new HashMap();
-            hashMap.put("CName", txtName.getText());
+            hashMap.put("Cname", txtName.getText());
             hashMap.put("CAddress", txtAddress.getText());
             hashMap.put("CSalary", txtSalary.getText());
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, DBConnection.getInstance().getConnection());
@@ -50,7 +50,7 @@ public class DashbordFormController {
                 throwables.printStackTrace();
             }
             // JasperPrintManager.printReport(jasperPrint,true);
-            JasperViewer.viewReport(jasperPrint,true);
+            JasperViewer.viewReport(jasperPrint,false);
         } catch (JRException e) {
             e.printStackTrace();
         }
