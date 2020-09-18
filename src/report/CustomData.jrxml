@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomData" pageWidth="400" pageHeight="400" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3aea084-d744-492a-bc8a-c9ff3a40d8d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+<!--	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>-->
+	<parameter name="Cname" class="java.lang.String"/>
+	<parameter name="CAddress" class="java.lang.String"/>
+	<parameter name="CSalary" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM customer]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salary" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="salary"/>
+		<property name="com.jaspersoft.studio.field.label" value="salary"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="Order"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="97" y="0" width="165" height="30" uuid="2221a458-0a1e-457d-a836-0b42ad2d4ac3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Order]]></text>
+			</staticText>
+			<image>
+				<reportElement x="130" y="35" width="100" height="102" uuid="439b6baf-151e-43a7-b8a3-68d90bc0f4d5"/>
+				<imageExpression><![CDATA["D:/My Graphics/circle-cropped (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="127">
+			<staticText>
+				<reportElement x="88" y="16" width="118" height="30" uuid="e0103328-174b-4dca-9b2d-30d70709d119"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="47" width="130" height="30" uuid="07f05eb1-878b-4865-80e3-7ebc452ba05f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Address ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="79" width="124" height="30" uuid="d18d7212-4022-4d29-b456-37409c39f683"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Salary ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="18" width="100" height="30" uuid="26f69193-3c5c-4f19-ad06-9c1b0c99a059"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Cname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="48" width="100" height="30" uuid="5c153530-419e-42bc-8b68-de51386ed820"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="79" width="100" height="30" uuid="ccf8d109-fc6a-47c5-8add-fbe3d35e5b86"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CSalary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="30" width="210" height="30" uuid="0f7f5974-fac1-4c47-9861-ff54b808f220"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Software By Alpha X Computer Solution]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

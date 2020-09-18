@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public class DashbordFormController {
     public JFXTextField txtId;
@@ -18,26 +19,38 @@ public class DashbordFormController {
     public JFXButton btnGenarateDB;
 
     public void btnGenarateReportOnAction(ActionEvent actionEvent) {
+        try {
+            InputStream is = this.getClass().getResourceAsStream("/report/CustomData.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            HashMap hashMap = new HashMap();
+            hashMap.put("CName", txtName.getText());
+            hashMap.put("CAddress", txtAddress.getText());
+            hashMap.put("CSalary", txtSalary.getText());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, DBConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
-
     public void btnGenarateDBOnAction(ActionEvent actionEvent) {
         try {
-            InputStream is  = this.getClass().getResourceAsStream("/report/CustomerReport.jrxml");
-            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+           // InputStream is  = this.getClass().getResourceAsStream("/report/CustomerReport.jrxml");
+            InputStream is  = this.getClass().getResourceAsStream("/report/CustomerReport.jasper");
+           // JasperReport jasperReport = JasperCompileManager.compileReport(is);
             JasperPrint jasperPrint = null;
-
             try {
-                jasperPrint = JasperFillManager.fillReport(jasperReport,null, DBConnection.getInstance().getConnection());
-
+                jasperPrint = JasperFillManager.fillReport(is,null, DBConnection.getInstance().getConnection());
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-
             // JasperPrintManager.printReport(jasperPrint,true);
             JasperViewer.viewReport(jasperPrint,true);
-
         } catch (JRException e) {
             e.printStackTrace();
         }
