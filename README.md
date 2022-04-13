@@ -3,16 +3,10 @@
 # First Jasper Report
 </div>
 
-<div align="center">
-
-<h3> Scan QR Code </h3>
-
-<img src="https://github.com/Mindula-Dilthushan/Red-Alpha-Assistant-Bot/blob/dev_shan/assets/redalphabot.jpg" width="270px" height="519px"> 
-</div>
 
 #### Clone this repository ✅
 ```md
-git clone https://github.com/Mindula-Dilthushan/Red-Alpha-Assistant-Bot.git
+git clone https://github.com/Mindula-Dilthushan/First-Jasper-Report.git
 ```
 ###
 
